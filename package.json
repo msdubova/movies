@@ -1,0 +1,44 @@
+{
+  "name": "movies-api",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --open",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "start-server": "cd server && npm start",
+    "start-client": "cd client && npm start",
+    "test-client": "cd client && npm test",
+    "test-server": "cd server && npm test",
+    "start-app": "concurrently -n client,server -c cyan,magenta \"npm run start-client\" \"npm run start-server\"",
+    "start-db": "/opt/homebrew/opt/postgresql@15/bin/pg_ctl start -D /opt/homebrew/var/postgres",
+    "stop-db": "/opt/homebrew/opt/postgresql@15/bin/pg_ctl stop -D /opt/homebrew/var/postgres",
+    "start": "npm-run-all -p start-db start-app"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-react-refresh": "^0.4.16",
+    "globals": "^15.14.0",
+    "vite": "^6.0.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "@types/cors": "^2.8.13",
+    "@types/dotenv": "^6.1.1",
+    "@types/jest": "^29.5.5",
+    "@types/sequelize": "^4.28.20",
+    "concurrently": "^7.6.0",
+    "npm-run-all": "^4.1.5"
+  }
+}
